@@ -37,10 +37,10 @@ export const InvitationSection = ({ config }) => {
           <div className="mt-4 px-6 py-2.5 rounded-2xl bg-[#FAF7F0] border border-[#D4AF37]/40 shadow-sm flex items-center gap-3 text-[#5E1E09]">
             <span className="text-[#C85217] font-bold text-lg">🪔</span>
             <div>
-              <p className="font-serif-heading font-bold text-base sm:text-lg text-[#3B281B]">
+              <p className="font-serif-heading text-center font-bold text-base sm:text-lg text-[#3B281B]">
                 {config.celebrationDates}
               </p>
-              <p className="text-xs text-[#C85217] font-semibold tracking-wider uppercase font-sans-body">
+              <p className="text-xs text-[#C85217] text-center font-semibold tracking-wider uppercase font-sans-body">
                 {config.celebrationDays} Celebration
               </p>
             </div>

@@ -72,7 +72,7 @@ export const LocationSection = ({ config }) => {
           {/* Right Side: Transit & Parking Guide */}
           <div className="md:col-span-5 bg-[#FAF7F0] p-6 rounded-2xl border border-[#D4AF37]/30 space-y-4">
             <h4 className="font-serif-heading text-lg font-bold text-[#5E1E09] pb-2 border-b border-[#D4AF37]/20 flex items-center gap-2">
-              <span>🚗</span> Travel & Parking Guide
+              <span></span> Travel & Parking Guide
             </h4>
 
             {config.transportDetails.railway && (
