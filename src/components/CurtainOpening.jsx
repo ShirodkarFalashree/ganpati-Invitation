@@ -34,7 +34,7 @@ export const CurtainOpening = ({ onCurtainsOpen }) => {
     <div
       onClick={handleOpen}
       className="fixed inset-0 z-50 overflow-hidden pointer-events-auto cursor-pointer"
-      title="Click anywhere to open curtains for Bappa's Darshan"
+      title=""
     >
       {/* Top Gold Valance Arch Banner */}
       <motion.div
