@@ -61,7 +61,7 @@ export const CurtainOpening = ({ onCurtainsOpen }) => {
 
         <div className="mt-28 text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
         <div className="text-center font-devanagari text-[#FFD700]/70 text-sm tracking-wider">
-          {!isOpen && "स्पर्श करा / Click to Open"}
+          {/* {!isOpen && "स्पर्श करा / Click to Open"} */}
         </div>
         <div className="mb-8 text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
       </motion.div>
@@ -78,7 +78,7 @@ export const CurtainOpening = ({ onCurtainsOpen }) => {
 
         <div className="mt-28 text-right text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
         <div className="text-center font-devanagari text-[#FFD700]/70 text-sm tracking-wider">
-          {!isOpen && "🪔 दर्शनासाठी स्वागत आहे"}
+          {/* {!isOpen && "🪔 दर्शनासाठी स्वागत आहे"} */}
         </div>
         <div className="mb-8 text-right text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
       </motion.div>
