@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-devanagari: 'Rozha One', 'Tiro Devanagari Marathi', serif;
+    --font-serif: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F0;
+    color: #3B281B;
+    scroll-behavior: smooth;
+  }
+}
+
+.font-devanagari {
+  font-family: var(--font-devanagari);
+}
+
+.font-serif-heading {
+  font-family: var(--font-serif);
+}
+
+.font-sans-body {
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism & Decorative Utilities */
+.glass-panel {
+  background: rgba(253, 248, 240, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 253, 247, 0.95) 0%, rgba(250, 242, 228, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(74, 32, 22, 0.08);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 40%, #C59B27 70%, #8B6508 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.saffron-gradient-text {
+  background: linear-gradient(135deg, #C85217 0%, #E88D37 50%, #B33900 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2), inset 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.diya-glow-shadow {
+  box-shadow: 0 0 25px 8px rgba(232, 141, 55, 0.35);
+}
+
+/* Smooth Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C85217;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px rgba(232, 141, 55, 0.6));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 16px rgba(232, 141, 55, 0.9));
+  }
+}
+
+.animate-diya-flicker {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
