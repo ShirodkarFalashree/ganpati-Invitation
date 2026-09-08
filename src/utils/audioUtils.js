@@ -2,12 +2,66 @@
  * Web Audio API synthesized brass temple bell chime & devotional audio controller
  */
 
+let bgAudioInstance = null;
+
+export const startDevotionalMusic = () => {
+  try {
+    if (!bgAudioInstance) {
+      bgAudioInstance = new Audio('/audio/ganpati.mp3');
+      bgAudioInstance.loop = true;
+      bgAudioInstance.volume = 0.85;
+      bgAudioInstance.preload = 'auto';
+    }
+
+    const unmuteAll = () => {
+      if (bgAudioInstance) {
+        bgAudioInstance.muted = false;
+        if (bgAudioInstance.paused) {
+          bgAudioInstance.play().catch(() => {});
+        }
+      }
+      window.removeEventListener('mousemove', unmuteAll);
+      window.removeEventListener('pointermove', unmuteAll);
+      window.removeEventListener('scroll', unmuteAll, true);
+      window.removeEventListener('touchstart', unmuteAll);
+      window.removeEventListener('pointerdown', unmuteAll);
+      window.removeEventListener('click', unmuteAll);
+      window.removeEventListener('keydown', unmuteAll);
+    };
+
+    // Attach listeners for any subtle interaction (mousemove, scroll, touch, pointer, click, keydown)
+    window.addEventListener('mousemove', unmuteAll, { once: true });
+    window.addEventListener('pointermove', unmuteAll, { once: true });
+    window.addEventListener('scroll', unmuteAll, { capture: true, once: true });
+    window.addEventListener('touchstart', unmuteAll, { once: true });
+    window.addEventListener('pointerdown', unmuteAll, { once: true });
+    window.addEventListener('click', unmuteAll, { once: true });
+    window.addEventListener('keydown', unmuteAll, { once: true });
+
+    // Attempt direct unmuted play when curtains open
+    const playPromise = bgAudioInstance.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        console.warn('Unmuted autoplay deferred by browser, starting muted audio & unmuting on movement:', err);
+        // Fallback: start playing muted so audio timeline starts immediately with curtains
+        bgAudioInstance.muted = true;
+        bgAudioInstance.play().catch(() => {});
+      });
+    }
+  } catch (err) {
+    console.error('Error starting devotional music:', err);
+  }
+};
+
 export const playTempleBellSound = () => {
   try {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     if (!AudioContext) return;
 
     const ctx = new AudioContext();
+    if (ctx.state === 'suspended') {
+      ctx.resume().catch(() => {});
+    }
     
     // Master Gain
     const masterGain = ctx.createGain();
@@ -48,3 +102,4 @@ export const playTempleBellSound = () => {
     console.warn('Web Audio bell chime not supported or blocked:', err);
   }
 };
+

@@ -6,7 +6,7 @@ export const CurtainOpening = ({ onCurtainsOpen }) => {
   const [isRemoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
-    // Automatically trigger curtain opening on page load after a brief 400ms pause
+    // Automatically trigger curtain opening on page load directly
     const timer = setTimeout(() => {
       handleOpen();
     }, 400);
@@ -60,9 +60,7 @@ export const CurtainOpening = ({ onCurtainsOpen }) => {
         <div className="absolute right-0 top-0 bottom-0 w-3 bg-[repeating-linear-gradient(0deg,#D4AF37,#D4AF37_10px,#8B6508_10px,#8B6508_20px)] opacity-90" />
 
         <div className="mt-28 text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
-        <div className="text-center font-devanagari text-[#FFD700]/70 text-sm tracking-wider">
-          {/* {!isOpen && "स्पर्श करा / Click to Open"} */}
-        </div>
+       
         <div className="mb-8 text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
       </motion.div>
 
@@ -77,9 +75,7 @@ export const CurtainOpening = ({ onCurtainsOpen }) => {
         <div className="absolute left-0 top-0 bottom-0 w-3 bg-[repeating-linear-gradient(0deg,#D4AF37,#D4AF37_10px,#8B6508_10px,#8B6508_20px)] opacity-90" />
 
         <div className="mt-28 text-right text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
-        <div className="text-center font-devanagari text-[#FFD700]/70 text-sm tracking-wider">
-          {/* {!isOpen && "🪔 दर्शनासाठी स्वागत आहे"} */}
-        </div>
+      
         <div className="mb-8 text-right text-[#D4AF37] opacity-40 font-devanagari text-4xl">❖</div>
       </motion.div>
     </div>
